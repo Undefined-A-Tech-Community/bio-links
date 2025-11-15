@@ -19,13 +19,13 @@ const links = [
 	},
 	{
 		title: 'Discord',
-		url: 'https://discord.gg/undefinedotech',
+		url: 'https://discord.gg/rdCAtwxngX',
 		icon: 'mdi:discord',
 		color: 'text-indigo-500 hover:bg-indigo-500 hover:text-white'
 	},
 	{
 		title: 'WhatsApp Community',
-		url: 'https://chat.whatsapp.com/undefinedotech',
+		url: 'https://chat.whatsapp.com/EG6UcUBm1914riQaats0tI',
 		icon: 'mdi:whatsapp',
 		color: 'text-green-500 hover:bg-green-500 hover:text-white'
 	}
@@ -49,16 +49,32 @@ const currentYear = new Date().getFullYear();
 		<meta name="generator" content={Astro.generator} />
 		<title>{profile.name} - Links</title>
 		<meta name="description" content={profile.bio} />
+
+		<meta property="og:type" content="website" />
+		<meta property="og:title" content={`${profile.name} - Links`} />
+		<meta property="og:description" content={profile.bio} />
+		<meta property="og:image" content={new URL(profile.avatar, Astro.url)} />
+		<meta property="og:url" content={Astro.url} />
+		<meta property="og:site_name" content={profile.name} />
+		<meta property="og:locale" content="es_ES" />
+
+		<meta name="twitter:card" content="summary" />
+		<meta name="twitter:title" content={`${profile.name} - Links`} />
+		<meta name="twitter:description" content={profile.bio} />
+		<meta name="twitter:image" content={new URL(profile.avatar, Astro.url)} />
+
+		<meta name="theme-color" content="#020617" />
+
+		<link rel="canonical" href={Astro.url} />
 	</head>
 	<body class="bg-linear-to-br from-black via-slate-950 to-gray-950 min-h-screen py-12 px-4 font-mono">
 		<main class="max-w-2xl mx-auto">
-			<!-- Profile Section -->
 			<div class="text-center mb-12 animate-fade-in">
-				<div class="mb-6 inline-block">
+				<div class="mb-6 inline-block relative overflow-hidden rounded-full shine-avatar">
 					<img
 						src={profile.avatar}
 						alt={profile.name}
-						class="w-24 h-24 md:w-32 md:h-32 rounded-full border-4 border-gray-800 shadow-2xl mx-auto hover:scale-105 transition-transform duration-300"
+						class="w-24 h-24 md:w-32 md:h-32 rounded-full border-4 border-gray-800 shadow-2xl hover:scale-105 transition-transform duration-300"
 					/>
 				</div>
 				<h1 class="text-3xl sm:text-4xl font-bold text-white mb-3">
@@ -69,7 +85,6 @@ const currentYear = new Date().getFullYear();
 				</p>
 			</div>
 
-			<!-- Links Section -->
 			<div class="space-y-4 animate-slide-up">
 				{links.map((link, index) => (
 					<a
@@ -106,7 +121,6 @@ const currentYear = new Date().getFullYear();
 				))}
 			</div>
 
-			<!-- Footer -->
 			<footer class="text-center mt-12 text-gray-400 text-xs md:text-sm">
 				<p>&copy; {currentYear} {profile.copyrightName}. Todos los derechos reservados.</p>
 			</footer>
@@ -141,6 +155,32 @@ const currentYear = new Date().getFullYear();
 
 			.animate-slide-up {
 				animation: slide-up 0.6s ease-out;
+			}
+
+			@keyframes shine {
+				0% {
+					left: -100%;
+				}
+				100% {
+					left: 200%;
+				}
+			}
+
+			.shine-avatar::after {
+				content: '';
+				position: absolute;
+				top: 0;
+				left: -100%;
+				width: 50%;
+				height: 100%;
+				background: linear-gradient(
+					90deg,
+					transparent,
+					rgba(255, 255, 255, 0.01),
+					transparent
+				);
+				animation: shine 8s ease-in infinite;
+				animation-delay: 3s;
 			}
 		</style>
 	</body>
