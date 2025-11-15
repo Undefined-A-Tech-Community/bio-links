@@ -1,16 +1,147 @@
 ---
+import { Icon } from 'astro-icon/components';
+import '@fontsource-variable/jetbrains-mono';
 
+import '../styles/global.css';
+
+const links = [
+	{
+		title: 'Instagram',
+		url: 'https://instagram.com/undefinedotech',
+		icon: 'mdi:instagram',
+		color: 'text-pink-500 hover:bg-pink-500 hover:text-white'
+	},
+	{
+		title: 'YouTube',
+		url: 'https://youtube.com/@undefinedotech',
+		icon: 'mdi:youtube',
+		color: 'text-red-500 hover:bg-red-500 hover:text-white'
+	},
+	{
+		title: 'Discord',
+		url: 'https://discord.gg/undefinedotech',
+		icon: 'mdi:discord',
+		color: 'text-indigo-500 hover:bg-indigo-500 hover:text-white'
+	},
+	{
+		title: 'WhatsApp Community',
+		url: 'https://chat.whatsapp.com/undefinedotech',
+		icon: 'mdi:whatsapp',
+		color: 'text-green-500 hover:bg-green-500 hover:text-white'
+	}
+];
+
+const profile = {
+	name: 'Undefined: A Tech Community',
+	bio: 'Encuentra contenido de tecnología, programación y desarrollo en todas nuestras redes sociales.',
+	copyrightName: 'Undefined: A Tech Community',
+	avatar: '/undefined-logo.jpg'
+};
+
+const currentYear = new Date().getFullYear();
 ---
 
-<html lang="en">
+<!DOCTYPE html>
+<html lang="es">
 	<head>
 		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		<title>{profile.name} - Links</title>
+		<meta name="description" content={profile.bio} />
 	</head>
-	<body>
-		<h1>Astro</h1>
+	<body class="bg-linear-to-br from-black via-slate-950 to-gray-950 min-h-screen py-12 px-4 font-mono">
+		<main class="max-w-2xl mx-auto">
+			<!-- Profile Section -->
+			<div class="text-center mb-12 animate-fade-in">
+				<div class="mb-6 inline-block">
+					<img
+						src={profile.avatar}
+						alt={profile.name}
+						class="w-24 h-24 md:w-32 md:h-32 rounded-full border-4 border-gray-800 shadow-2xl mx-auto hover:scale-105 transition-transform duration-300"
+					/>
+				</div>
+				<h1 class="text-3xl sm:text-4xl font-bold text-white mb-3">
+					{profile.name}
+				</h1>
+				<p class="text-sm sm:text-base font-light text-gray-500 max-w-104 sm:max-w-lg mx-auto">
+					{profile.bio}
+				</p>
+			</div>
+
+			<!-- Links Section -->
+			<div class="space-y-4 animate-slide-up">
+				{links.map((link, index) => (
+					<a
+						href={link.url}
+						target="_blank"
+						rel="noopener noreferrer"
+						class={`
+							flex items-center justify-center gap-3
+							w-full p-5
+							bg-black/40
+							backdrop-blur-sm
+							rounded-2xl
+							shadow-lg
+							${link.color}
+							hover:scale-105
+							hover:shadow-2xl
+							transition-all duration-300
+							group
+						`}
+						style={`animation-delay: ${index * 0.1}s`}
+					>
+						<Icon
+							name={link.icon}
+							class="w-5 h-5 md:w-6 md:h-6 shrink-0"
+						/>
+						<span class="text-base md:text-lg font-semibold">
+							{link.title}
+						</span>
+						<Icon
+							name="mdi:arrow-right"
+							class="w-5 h-5 ml-auto opacity-0 group-hover:opacity-100 transition-opacity"
+						/>
+					</a>
+				))}
+			</div>
+
+			<!-- Footer -->
+			<footer class="text-center mt-12 text-gray-400 text-xs md:text-sm">
+				<p>&copy; {currentYear} {profile.copyrightName}. Todos los derechos reservados.</p>
+			</footer>
+		</main>
+
+		<style>
+			@keyframes fade-in {
+				from {
+					opacity: 0;
+					transform: translateY(-20px);
+				}
+				to {
+					opacity: 1;
+					transform: translateY(0);
+				}
+			}
+
+			@keyframes slide-up {
+				from {
+					opacity: 0;
+					transform: translateY(20px);
+				}
+				to {
+					opacity: 1;
+					transform: translateY(0);
+				}
+			}
+
+			.animate-fade-in {
+				animation: fade-in 0.6s ease-out;
+			}
+
+			.animate-slide-up {
+				animation: slide-up 0.6s ease-out;
+			}
+		</style>
 	</body>
 </html>
