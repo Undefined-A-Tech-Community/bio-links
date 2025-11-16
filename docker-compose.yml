@@ -1,0 +1,13 @@
+services:
+  bio-links:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: bio-links
+    ports:
+      - '${PORT:-3000}:80'
+    restart: unless-stopped
+    env_file:
+      - .env
+    environment:
+      - NODE_ENV=${NODE_ENV:-production}

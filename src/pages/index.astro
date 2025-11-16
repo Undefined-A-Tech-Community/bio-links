@@ -5,183 +5,182 @@ import '@fontsource-variable/jetbrains-mono';
 import '../styles/global.css';
 
 const links = [
-	{
-		title: 'Instagram',
-		url: 'https://instagram.com/undefinedotech',
-		icon: 'mdi:instagram',
-		color: 'text-pink-500 hover:bg-pink-500 hover:text-white'
-	},
-	{
-		title: 'YouTube',
-		url: 'https://youtube.com/@undefinedotech',
-		icon: 'mdi:youtube',
-		color: 'text-red-500 hover:bg-red-500 hover:text-white'
-	},
-	{
-		title: 'Discord',
-		url: 'https://discord.gg/rdCAtwxngX',
-		icon: 'mdi:discord',
-		color: 'text-indigo-500 hover:bg-indigo-500 hover:text-white'
-	},
-	{
-		title: 'WhatsApp Community',
-		url: 'https://chat.whatsapp.com/EG6UcUBm1914riQaats0tI',
-		icon: 'mdi:whatsapp',
-		color: 'text-green-500 hover:bg-green-500 hover:text-white'
-	}
+  {
+    title: 'Instagram',
+    url: 'https://instagram.com/undefinedotech',
+    icon: 'mdi:instagram',
+    color: 'text-pink-500 hover:bg-pink-500 hover:text-white',
+  },
+  {
+    title: 'YouTube',
+    url: 'https://youtube.com/@undefinedotech',
+    icon: 'mdi:youtube',
+    color: 'text-red-500 hover:bg-red-500 hover:text-white',
+  },
+  {
+    title: 'Discord',
+    url: 'https://discord.gg/rdCAtwxngX',
+    icon: 'mdi:discord',
+    color: 'text-indigo-500 hover:bg-indigo-500 hover:text-white',
+  },
+  {
+    title: 'WhatsApp Community',
+    url: 'https://chat.whatsapp.com/EG6UcUBm1914riQaats0tI',
+    icon: 'mdi:whatsapp',
+    color: 'text-green-500 hover:bg-green-500 hover:text-white',
+  },
 ];
 
 const profile = {
-	name: 'Undefined: A Tech Community',
-	bio: 'Encuentra contenido de tecnología, programación y desarrollo en todas nuestras redes sociales.',
-	copyrightName: 'Undefined: A Tech Community',
-	avatar: '/undefined-logo.jpg'
+  name: 'Undefined: A Tech Community',
+  bio: 'Encuentra contenido de tecnología, programación y desarrollo en todas nuestras redes sociales.',
+  copyrightName: 'Undefined: A Tech Community',
+  avatar: '/undefined-logo.jpg',
 };
 
 const currentYear = new Date().getFullYear();
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{profile.name} - Links</title>
-		<meta name="description" content={profile.bio} />
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{profile.name} - Links</title>
+    <meta name="description" content={profile.bio} />
 
-		<meta property="og:type" content="website" />
-		<meta property="og:title" content={`${profile.name} - Links`} />
-		<meta property="og:description" content={profile.bio} />
-		<meta property="og:image" content={new URL(profile.avatar, Astro.url)} />
-		<meta property="og:url" content={Astro.url} />
-		<meta property="og:site_name" content={profile.name} />
-		<meta property="og:locale" content="es_ES" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={`${profile.name} - Links`} />
+    <meta property="og:description" content={profile.bio} />
+    <meta property="og:image" content={new URL(profile.avatar, Astro.url)} />
+    <meta property="og:url" content={Astro.url} />
+    <meta property="og:site_name" content={profile.name} />
+    <meta property="og:locale" content="es_ES" />
 
-		<meta name="twitter:card" content="summary" />
-		<meta name="twitter:title" content={`${profile.name} - Links`} />
-		<meta name="twitter:description" content={profile.bio} />
-		<meta name="twitter:image" content={new URL(profile.avatar, Astro.url)} />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={`${profile.name} - Links`} />
+    <meta name="twitter:description" content={profile.bio} />
+    <meta name="twitter:image" content={new URL(profile.avatar, Astro.url)} />
 
-		<meta name="theme-color" content="#020617" />
+    <meta name="theme-color" content="#020617" />
 
-		<link rel="canonical" href={Astro.url} />
-	</head>
-	<body class="bg-linear-to-br from-black via-slate-950 to-gray-950 min-h-screen py-12 px-4 font-mono">
-		<main class="max-w-2xl mx-auto">
-			<div class="text-center mb-12 animate-fade-in">
-				<div class="mb-6 inline-block relative overflow-hidden rounded-full shine-avatar">
-					<img
-						src={profile.avatar}
-						alt={profile.name}
-						class="w-24 h-24 md:w-32 md:h-32 rounded-full border-4 border-gray-800 shadow-2xl hover:scale-105 transition-transform duration-300"
-					/>
-				</div>
-				<h1 class="text-3xl sm:text-4xl font-bold text-white mb-3">
-					{profile.name}
-				</h1>
-				<p class="text-sm sm:text-base font-light text-gray-500 max-w-104 sm:max-w-lg mx-auto">
-					{profile.bio}
-				</p>
-			</div>
+    <link rel="icon" type="image/jpeg" href={profile.avatar} />
+    <link rel="canonical" href={Astro.url} />
+  </head>
+  <body
+    class="min-h-screen bg-linear-to-br from-black via-slate-950 to-gray-950 px-4 py-12 font-mono"
+  >
+    <main class="mx-auto max-w-2xl">
+      <div class="animate-fade-in mb-12 text-center">
+        <div
+          class="shine-avatar relative mb-6 inline-block overflow-hidden rounded-full"
+        >
+          <img
+            src={profile.avatar}
+            alt={profile.name}
+            class="h-24 w-24 rounded-full border-4 border-gray-800 shadow-2xl transition-transform duration-300 hover:scale-105 md:h-32 md:w-32"
+          />
+        </div>
+        <h1
+          class="undefined-title mx-auto mb-2.5 overflow-hidden text-3xl font-bold text-white sm:text-4xl"
+        >
+          Undefined: <br class="sm:hidden" /> A Tech Community
+        </h1>
+        <p
+          class="mx-auto max-w-104 text-sm font-light text-gray-500 sm:max-w-lg sm:text-base"
+        >
+          {profile.bio}
+        </p>
+      </div>
 
-			<div class="space-y-4 animate-slide-up">
-				{links.map((link, index) => (
-					<a
-						href={link.url}
-						target="_blank"
-						rel="noopener noreferrer"
-						class={`
-							flex items-center justify-center gap-3
-							w-full p-5
-							bg-black/40
-							backdrop-blur-sm
-							rounded-2xl
-							shadow-lg
-							${link.color}
-							hover:scale-105
-							hover:shadow-2xl
-							transition-all duration-300
-							group
-						`}
-						style={`animation-delay: ${index * 0.1}s`}
-					>
-						<Icon
-							name={link.icon}
-							class="w-5 h-5 md:w-6 md:h-6 shrink-0"
-						/>
-						<span class="text-base md:text-lg font-semibold">
-							{link.title}
-						</span>
-						<Icon
-							name="mdi:arrow-right"
-							class="w-5 h-5 ml-auto opacity-0 group-hover:opacity-100 transition-opacity"
-						/>
-					</a>
-				))}
-			</div>
+      <div class="animate-slide-up space-y-4">
+        {
+          links.map((link, index) => (
+            <a
+              href={link.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              class={`flex w-full items-center justify-center gap-3 rounded-2xl bg-black/40 p-5 shadow-lg backdrop-blur-sm ${link.color} group transition-all duration-300 hover:scale-105 hover:shadow-2xl`}
+              style={`animation-delay: ${index * 0.1}s`}
+            >
+              <Icon name={link.icon} class="h-5 w-5 shrink-0 md:h-6 md:w-6" />
+              <span class="text-base font-semibold md:text-lg">
+                {link.title}
+              </span>
+              <Icon
+                name="mdi:arrow-right"
+                class="ml-auto h-5 w-5 opacity-0 transition-opacity group-hover:opacity-100"
+              />
+            </a>
+          ))
+        }
+      </div>
 
-			<footer class="text-center mt-12 text-gray-400 text-xs md:text-sm">
-				<p>&copy; {currentYear} {profile.copyrightName}. Todos los derechos reservados.</p>
-			</footer>
-		</main>
+      <footer class="mt-12 text-center text-xs text-gray-400 md:text-sm">
+        <p>
+          &copy; {currentYear}
+          {profile.copyrightName}. Todos los derechos reservados.
+        </p>
+      </footer>
+    </main>
 
-		<style>
-			@keyframes fade-in {
-				from {
-					opacity: 0;
-					transform: translateY(-20px);
-				}
-				to {
-					opacity: 1;
-					transform: translateY(0);
-				}
-			}
+    <style>
+      @keyframes fade-in {
+        from {
+          opacity: 0;
+          transform: translateY(-20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
 
-			@keyframes slide-up {
-				from {
-					opacity: 0;
-					transform: translateY(20px);
-				}
-				to {
-					opacity: 1;
-					transform: translateY(0);
-				}
-			}
+      @keyframes slide-up {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
 
-			.animate-fade-in {
-				animation: fade-in 0.6s ease-out;
-			}
+      .animate-fade-in {
+        animation: fade-in 0.6s ease-out;
+      }
 
-			.animate-slide-up {
-				animation: slide-up 0.6s ease-out;
-			}
+      .animate-slide-up {
+        animation: slide-up 0.6s ease-out;
+      }
 
-			@keyframes shine {
-				0% {
-					left: -100%;
-				}
-				100% {
-					left: 200%;
-				}
-			}
+      @keyframes shine {
+        0% {
+          left: -100%;
+        }
+        100% {
+          left: 200%;
+        }
+      }
 
-			.shine-avatar::after {
-				content: '';
-				position: absolute;
-				top: 0;
-				left: -100%;
-				width: 50%;
-				height: 100%;
-				background: linear-gradient(
-					90deg,
-					transparent,
-					rgba(255, 255, 255, 0.01),
-					transparent
-				);
-				animation: shine 8s ease-in infinite;
-				animation-delay: 3s;
-			}
-		</style>
-	</body>
+      .shine-avatar::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 50%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 255, 255, 0.01),
+          transparent
+        );
+        animation: shine 8s ease-in infinite;
+        animation-delay: 3s;
+      }
+    </style>
+  </body>
 </html>
