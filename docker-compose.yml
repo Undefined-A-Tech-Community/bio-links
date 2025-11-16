@@ -4,8 +4,6 @@ services:
       context: .
       dockerfile: Dockerfile
     container_name: bio-links
-    ports:
-      - '${PORT:-3000}:80'
     restart: unless-stopped
     env_file:
       - .env
