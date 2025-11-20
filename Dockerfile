@@ -17,6 +17,9 @@ RUN bun install --frozen-lockfile
 
 COPY . .
 
+ARG SITE_URL
+ENV SITE_URL=${SITE_URL}
+
 RUN bun run build
 
 FROM nginx:alpine-slim AS runtime

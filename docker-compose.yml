@@ -3,4 +3,6 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+      args:
+        - SITE_URL=${SITE_URL}
     restart: unless-stopped
