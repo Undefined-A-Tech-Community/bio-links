@@ -55,7 +55,7 @@ const SITE_URL = import.meta.env.SITE_URL;
     <meta property="og:type" content="website" />
     <meta property="og:title" content={`${profile.name} - Links`} />
     <meta property="og:description" content={profile.bio} />
-    <meta property="og:image" content={new URL(profile.avatar)} />
+    <meta property="og:image" content={new URL(profile.avatar, SITE_URL)} />
     <meta property="og:url" content={SITE_URL} />
     <meta property="og:site_name" content={profile.name} />
     <meta property="og:locale" content="es_ES" />
@@ -63,7 +63,7 @@ const SITE_URL = import.meta.env.SITE_URL;
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content={`${profile.name} - Links`} />
     <meta name="twitter:description" content={profile.bio} />
-    <meta name="twitter:image" content={new URL(profile.avatar)} />
+    <meta name="twitter:image" content={new URL(profile.avatar, SITE_URL)} />
 
     <meta name="theme-color" content="#020617" />
 
