@@ -4,9 +4,3 @@ services:
       context: .
       dockerfile: Dockerfile
     restart: unless-stopped
-    ports:
-      - '${APP_PORT}:80'
-    env_file:
-      - .env
-    environment:
-      - NODE_ENV=${NODE_ENV}
