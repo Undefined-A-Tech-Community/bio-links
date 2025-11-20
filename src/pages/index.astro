@@ -39,6 +39,8 @@ const profile = {
 };
 
 const currentYear = new Date().getFullYear();
+
+const SITE_URL = import.meta.env.SITE_URL;
 ---
 
 <!doctype html>
@@ -53,20 +55,20 @@ const currentYear = new Date().getFullYear();
     <meta property="og:type" content="website" />
     <meta property="og:title" content={`${profile.name} - Links`} />
     <meta property="og:description" content={profile.bio} />
-    <meta property="og:image" content={new URL(profile.avatar, Astro.url)} />
-    <meta property="og:url" content={Astro.url} />
+    <meta property="og:image" content={new URL(profile.avatar)} />
+    <meta property="og:url" content={SITE_URL} />
     <meta property="og:site_name" content={profile.name} />
     <meta property="og:locale" content="es_ES" />
 
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content={`${profile.name} - Links`} />
     <meta name="twitter:description" content={profile.bio} />
-    <meta name="twitter:image" content={new URL(profile.avatar, Astro.url)} />
+    <meta name="twitter:image" content={new URL(profile.avatar)} />
 
     <meta name="theme-color" content="#020617" />
 
     <link rel="icon" type="image/jpeg" href={profile.avatar} />
-    <link rel="canonical" href={Astro.url} />
+    <link rel="canonical" href={SITE_URL} />
   </head>
   <body
     class="min-h-screen bg-linear-to-br from-black via-slate-950 to-gray-950 px-4 py-12 font-mono"
